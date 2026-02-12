@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="image/logo.png">
+  <link rel="b5" href="C:\Users\DHRUV\OneDrive\Desktop\bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\css\bootstrap.min.css">
+</head>
+<body>
+
+<script src="C:\Users\DHRUV\OneDrive\Desktop\bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js"></script>
+
+  <div class="navbar">
+    <div class="logo">
+      <img src="image/logo.png" alt="logo" class="img-logo"> 
+      CampusBuzz</div>
+    <div class="nav-links">
+      <a class="active" href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="results.html">Results</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="login-btn">Login</a>
+    </div>
+  </div>
+
+  <section class="hero">
+    <h1>Discover Amazing College Events</h1>
+    <p>Stay updated with the latest events, competitions, and activities happening on campus. Register now and be part of the excitement!</p>
+    <a href="#events" class="hero-btn">Explore Events</a>
+  </section>
+
+  <section class="section" id="events">
+<h2>All Events</h2>
+<p>Explore all upcoming college events and register now</p>
+
+<div class="cards">
+
+<div class="card">
+  <span class="badge">Technical</span>
+  <img src="image/event1.jpg">
+  <div class="card-body">
+    <h3>Annual Tech Symposium</h3>
+    <p>Technology & innovation event.</p>
+    <div class="event-details">
+      <p>📅 March 25, 2026 • 9:00 AM – 5:00 PM</p>
+      <p>📍 Main Auditorium, Block A</p>
+      <p>👥 145 / 200 registered</p>
+    </div>
+    <button onclick="openEvent(1)">View Details</button>
+  </div>
+</div>
+
+<div class="card">
+  <span class="badge">Cultural</span>
+  <img src="image/event2.jpg">
+  <div class="card-body">
+    <h3>Spring Cultural Fest</h3>
+    <p>Music, dance & celebration.</p>
+    <div class="event-details">
+      <p>📅 April 10, 2026 • 6:00 PM – 10:00 PM</p>
+      <p>📍 Central Courtyard</p>
+      <p>👥 320 / 500 registered</p>
+    </div>
+    <button onclick="openEvent(2)">View Details</button>
+
+  </div>
+</div>
+
+<div class="card">
+  <span class="badge">Workshop</span>
+  <img src="image/event3.jpg">
+  <div class="card-body">
+    <h3>Entrepreneurship Workshop</h3>
+    <p>Build startup ideas.</p>
+    <div class="event-details">
+      <p>📅 April 20, 2026 • 2:00 PM – 6:00 PM</p>
+      <p>📍 Business School, Room 301</p>
+      <p>👥 35 / 50 registered</p>
+    </div>
+    <button onclick="openEvent(3)">View Details</button>
+  </div>
+</div>
+
+<div class="card">
+  <span class="badge">Sports</span>
+  <img src="image/event4.jpg">
+  <div class="card-body">
+    <h3>Inter-College Sports Meet</h3>
+    <p>Show your athletic spirit.</p>
+    <div class="event-details">
+      <p>📅 May 2, 2026 • 8:00 AM – 6:00 PM</p>
+      <p>📍 College Sports Complex</p>
+      <p>👥 210 / 300 registered</p>
+    </div>
+    <button onclick="openEvent(4)">View Details</button>  
+  </div>
+</div>
+
+<div class="card">
+  <span class="badge">Technical</span>
+  <img src="image/event5.jpg">
+  <div class="card-body">
+    <h3>Coding Bootcamp</h3>
+    <p>Hands-on coding sessions.</p>
+    <div class="event-details">
+      <p>📅 May 15, 2026 • 10:00 AM – 4:00 PM</p>
+      <p>📍 Computer Lab 3</p>
+      <p>👥 60 / 80 registered</p>
+    </div>
+    <button onclick="openEvent(5)">View Details</button>
+  </div>
+</div>
+
+<!-- Card 6 -->
+<div class="card">
+  <span class="badge">Cultural</span>
+  <img src="image/event6.jpg">
+  <div class="card-body">
+    <h3>Art Exhibition</h3>
+    <p>Creativity & artwork showcase.</p>
+    <div class="event-details">
+      <p>📅 June 1, 2026 • 11:00 AM – 7:00 PM</p>
+      <p>📍 College Art Gallery</p>
+      <p>👥 90 / 150 registered</p>
+    </div>
+    <button onclick="openEvent(6)">View Details</button>
+  </div>
+</div>
+
+</div>
+
+</section>
+<script>
+function openEvent(id){
+  window.location.href = "event-details.html?id=" + id;
+}
+</script>
+
+</body>
+</html>
