@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | CampusBuzz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="image/logo.png">
+<link rel="b5" href="C:\Users\DHRUV\OneDrive\Desktop\bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\css\bootstrap.min.css">
+<style>
+
+/* ====== TERA PURE SAME CSS ====== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+  color:#fff;
+  min-height:100vh;
+}
+
+.navbar{
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 60px;
+  box-shadow:0 0 20px rgba(255,0,255,0.4);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-weight:600;
+  font-size:30px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:linear-gradient(45deg,#ff00cc,#3333ff,#00ffff);
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.img-logo{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+}
+
+.nav-links a{
+  margin-left:25px;
+  text-decoration:none;
+  color:#ddd;
+  font-size:14px;
+  transition:0.3s;
+  padding:6px 14px;
+  border-radius:20px;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  background:linear-gradient(45deg,#ff00cc,#3333ff);
+  color:#fff;
+}
+
+.section{
+  padding:70px 60px;
+  text-align:center;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.card{
+  position:relative;
+  background:rgba(255,255,255,0.05);
+  border-radius:15px;
+  overflow:hidden;
+  transition:0.4s ease;
+  cursor:pointer;
+  opacity:0;
+  animation:cardFade 0.6s ease forwards;
+}
+
+.card:nth-child(1){ animation-delay:0.1s; }
+.card:nth-child(2){ animation-delay:0.2s; }
+.card:nth-child(3){ animation-delay:0.3s; }
+.card:nth-child(4){ animation-delay:0.4s; }
+.card:nth-child(5){ animation-delay:0.5s; }
+.card:nth-child(6){ animation-delay:0.6s; }
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:linear-gradient(45deg,#ff00cc,#00ffff);
+  color:#fff;
+  font-size:11px;
+  padding:5px 12px;
+  border-radius:15px;
+}
+
+.card-body{
+  padding:20px;
+}
+
+.card-body h3{
+  font-size:17px;
+}
+
+.event-modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.modal-box{
+  width:400px;
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  position:relative;
+}
+
+.modal-box img{
+  width:100%;
+  height:400px;
+  object-fit:cover;
+}
+
+.modal-content{
+  padding:25px;
+  color:#000;
+}
+
+.modal-close{
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:22px;
+  background:rgba(0,0,0,0.6);
+  color:white;
+  padding:6px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* FILTER BUTTON STYLE */
+.filter-buttons{
+  margin-bottom:40px;
+}
+
+.filter-buttons button{
+  padding:8px 20px;
+  margin:5px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+  transition:0.3s;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover{
+  background:linear-gradient(45deg,#ff00cc,#3333ff);
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  margin-top:50px;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes cardFade{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes zoomIn{
+  from{transform:scale(0.8); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+
+</style>
+</head>
+
+<body>
+
+<script src="C:\Users\DHRUV\OneDrive\Desktop\bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js"></script>
+
+<div class="navbar">
+    <div class="logo">
+      <img src="image/logo.png" alt="logo" class="img-logo"> 
+      CampusBuzz</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a class="active" href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="results.html">Results</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="profile.html" id="profileLink" class="profile-btn" style="display:none;">Profile</a>
+
+    </div>
+  </div>
+
+
+<section class="section">
+
+<h2>All Events</h2>
+
+<!-- FILTER BUTTONS -->
+<div class="filter-buttons">
+  <button class="active" onclick="filterEvents('all',this)">All</button>
+  <button onclick="filterEvents('Technical',this)">Technical</button>
+  <button onclick="filterEvents('Cultural',this)">Cultural</button>
+  <button onclick="filterEvents('Workshop',this)">Workshop</button>
+  <button onclick="filterEvents('Sports',this)">Sports</button>
+</div>
+
+<div class="cards">
+
+<!-- EVENT 1 -->
+<div class="card" data-category="Technical"
+onclick="openModal('image/gallary1.jpg','Annual Tech Symposium','March 25, 2026 • 9:00 AM – 5:00 PM','Main Auditorium, Block A')">
+<span class="badge">Technical</span>
+<img src="image/event1.jpg">
+<div class="card-body">
+<h3>Annual Tech Symposium</h3>
+</div>
+</div>
+
+<!-- EVENT 2 -->
+<div class="card" data-category="Cultural"
+onclick="openModal('image/gallary2.jpg','Spring Cultural Fest','April 10, 2026 • 6:00 PM – 10:00 PM','Central Courtyard')">
+<span class="badge">Cultural</span>
+<img src="image/event2.jpg">
+<div class="card-body">
+<h3>Spring Cultural Fest</h3>
+</div>
+</div>
+
+<!-- EVENT 3 -->
+<div class="card" data-category="Workshop"
+onclick="openModal('image/gallary3.png','Entrepreneurship Workshop','April 20, 2026 • 2:00 PM – 6:00 PM','Business School, Room 301')">
+<span class="badge">Workshop</span>
+<img src="image/event3.jpg">
+<div class="card-body">
+<h3>Entrepreneurship Workshop</h3>
+</div>
+</div>
+
+<!-- EVENT 4 -->
+<div class="card" data-category="Sports"
+onclick="openModal('image/gallary4.jpg','Inter-College Sports Meet','May 2, 2026 • 8:00 AM – 6:00 PM','College Sports Complex')">
+<span class="badge">Sports</span>
+<img src="image/event4.jpg">
+<div class="card-body">
+<h3>Inter-College Sports Meet</h3>
+</div>
+</div>
+
+<!-- EVENT 5 -->
+<div class="card" data-category="Technical"
+onclick="openModal('image/gallary5.jpg','Coding Bootcamp','May 15, 2026 • 10:00 AM – 4:00 PM','Computer Lab 3')">
+<span class="badge">Technical</span>
+<img src="image/event5.jpg">
+<div class="card-body">
+<h3>Coding Bootcamp</h3>
+</div>
+</div>
+
+<!-- EVENT 6 -->
+<div class="card" data-category="Cultural"
+onclick="openModal('image/gallary6.jpg','Art Exhibition','June 1, 2026 • 11:00 AM – 7:00 PM','College Art Gallery')">
+<span class="badge">Cultural</span>
+<img src="image/event6.jpg">
+<div class="card-body">
+<h3>Art Exhibition</h3>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- MODAL SAME -->
+<div class="event-modal" id="eventModal">
+<div class="modal-box">
+<span class="modal-close" onclick="closeModal()">✖</span>
+<img id="modalImg">
+<div class="modal-content">
+<h2 id="modalTitle"></h2>
+<p id="modalDate"></p>
+<p id="modalLocation"></p>
+</div>
+</div>
+</div>
+
+<footer>© 2026 College Event Website</footer>
+
+<script>
+
+function filterEvents(category,btn){
+  let cards=document.querySelectorAll(".card");
+  let buttons=document.querySelectorAll(".filter-buttons button");
+
+  buttons.forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+
+  cards.forEach(card=>{
+    if(category==="all" || card.dataset.category===category){
+      card.style.display="block";
+    }else{
+      card.style.display="none";
+    }
+  });
+}
+
+function openModal(img,title,date,location){
+  document.getElementById("eventModal").style.display="flex";
+  document.getElementById("modalImg").src=img;
+  document.getElementById("modalTitle").innerText=title;
+  document.getElementById("modalDate").innerText=date;
+  document.getElementById("modalLocation").innerText=location;
+}
+
+function closeModal(){
+  document.getElementById("eventModal").style.display="none";
+}
+
+document.getElementById("eventModal").addEventListener("click",function(e){
+  if(e.target===this){
+    closeModal();
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function(){
+  const role = localStorage.getItem("userRole");
+  if(role === "student"){
+    document.getElementById("profileLink").style.display = "inline";
+    document.querySelector(".login-btn").style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

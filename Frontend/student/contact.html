@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | CampusBuzz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:
+  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+  url("image/event.jpg");
+  background-size:cover;
+  color:#fff;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 60px;
+  box-shadow:0 0 20px rgba(255,0,255,0.4);
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  animation:fadeDown 0.8s ease forwards;
+}
+
+.profile-btn{
+  width:30px;       
+  height:30px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.profile-btn img{
+  width:50px;
+  height:50px;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.logo{
+  font-weight:600;
+  font-size:30px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:linear-gradient(45deg,#ff00cc,#3333ff,#00ffff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.img-logo{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+}
+
+.nav-links a{
+  margin-left:25px;
+  text-decoration:none;
+  color:#ddd;
+  font-size:14px;
+  transition:all 0.3s ease;
+  padding:6px 14px;
+  border-radius:20px;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  background:linear-gradient(45deg,#ff00cc,#3333ff);
+  color:#fff;
+  box-shadow:0 0 15px #ff00cc;
+}
+
+/* ================= PAGE ================= */
+
+.page{
+  max-width:1100px;
+  margin:120px auto 60px;
+  padding:20px;
+}
+
+.section{
+  background:rgba(255,255,255,0.05);
+  padding:50px;
+  border-radius:25px;
+  backdrop-filter:blur(20px);
+
+  animation:fadeUp 1s ease forwards;
+}
+
+h2{
+  text-align:center;
+  font-size:30px;
+  margin-bottom:40px;
+  background:linear-gradient(45deg,#ff00cc,#00ffff,#ffcc00);
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:fadeIn 1.2s ease forwards;
+}
+
+.contact-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.contact-info{
+  animation:slideLeft 1s ease forwards;
+}
+
+.contact-info p{
+  margin-bottom:15px;
+  color:#ccc;
+  font-size:14px;
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  animation:slideRight 1s ease forwards;
+}
+
+input, textarea{
+  padding:12px 15px;
+  border-radius:10px;
+  border:none;
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+  font-size:14px;
+  transition:0.3s;
+}
+
+input:focus, textarea:focus{
+  outline:none;
+  box-shadow:0 0 10px #ff00cc;
+  transform:scale(1.02);
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#ccc;
+}
+
+textarea{
+  height:120px;
+  resize:none;
+}
+
+button{
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(45deg,#ff00cc,#3333ff);
+  color:#fff;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  opacity:0.8;
+  transform:scale(1.05);
+}
+
+.success-message{
+  display:none;
+  margin-top:20px;
+  padding:12px;
+  border-radius:10px;
+  background:rgba(0,255,100,0.2);
+  border:1px solid #00ff99;
+  color:#00ff99;
+  text-align:center;
+  font-size:14px;
+}
+
+footer{
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(10px);
+  text-align:center;
+  padding:20px 10px;
+  font-size:14px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  margin-top:50px;
+
+  background-image:linear-gradient(45deg,#ff00cc,#00ffff,#ffcc00);
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:fadeUp 1.5s ease forwards;
+}
+
+@media(max-width:900px){
+  .contact-container{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeDown{
+  from{opacity:0; transform:translateY(-40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes slideLeft{
+  from{opacity:0; transform:translateX(-50px);}
+  to{opacity:1; transform:translateX(0);}
+}
+
+@keyframes slideRight{
+  from{opacity:0; transform:translateX(50px);}
+  to{opacity:1; transform:translateX(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">
+      <img src="image/logo.png" alt="logo" class="img-logo"> 
+      CampusBuzz</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="results.html">Results</a>
+      <a href="faq.html">FAQ</a>
+      <a class="active" href="contact.html">Contact</a>
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="profile.html" id="profileLink" class="profile-btn" style="display:none;">Profile</a>
+    </div>
+</div>
+
+<div class="page">
+  <div class="section">
+    <h2>Contact Us</h2>
+
+    <div class="contact-container">
+
+      <div class="contact-info">
+        <p><strong>Email:</strong> campusbuzz@gmail.com</p>
+        <p><strong>Phone:</strong> +91 7861881784</p>
+        <p><strong>Location:</strong> ABC College Campus</p>
+        <p>
+          Have questions about events or registrations?  
+          Feel free to contact us anytime. Our team is always ready to help you.
+        </p>
+      </div>
+
+      <div>
+        <form id="contactForm">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <input type="text" placeholder="Subject">
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+
+        <div class="success-message" id="successMsg">
+          ✅ Message Sent Successfully!
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 College Event Website</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  document.getElementById("successMsg").style.display = "block";
+  this.reset();
+});
+
+document.addEventListener("DOMContentLoaded", function(){
+  const role = localStorage.getItem("userRole");
+  if(role === "student"){
+    document.getElementById("profileLink").style.display = "inline";
+    document.querySelector(".login-btn").style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

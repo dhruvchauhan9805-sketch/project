@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | CampusBuzz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="image/logo.png">
+<link rel="b5" href="C:\Users\DHRUV\OneDrive\Desktop\bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\css\bootstrap.min.css">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+  color:#fff;
+  min-height:100vh;
+}
+
+@keyframes fadeUp {
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.navbar{
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 60px;
+  box-shadow:0 0 20px rgba(255,0,255,0.4);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-weight:600;
+  font-size:30px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:linear-gradient(45deg,#ff00cc,#3333ff,#00ffff);
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.img-logo{
+  width:60px;
+  height:60px;
+  object-fit:cover;
+}
+
+.nav-links a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#ddd;
+  font-size:14px;
+  padding:6px 14px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  background:linear-gradient(45deg,#ff00cc,#3333ff);
+  color:#fff;
+  box-shadow:0 0 15px #ff00cc;
+}
+
+.section{
+  padding:80px 20px;
+  max-width:900px;
+  margin:auto;
+  animation:fadeUp 1s ease forwards;
+}
+
+.section h2{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:40px;
+  background:linear-gradient(45deg,#00ffff,#ff00cc);
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.faq-item{
+  background:rgba(255,255,255,0.05);
+  margin-bottom:15px;
+  border-radius:12px;
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.1);
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.faq-question{
+  padding:18px 20px;
+  cursor:pointer;
+  font-weight:600;
+  position:relative;
+}
+
+.faq-question::after{
+  content:"+";
+  position:absolute;
+  right:20px;
+  font-size:20px;
+}
+
+.faq-item.active .faq-question::after{
+  content:"−";
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  padding:0 20px;
+  font-size:14px;
+  color:#ccc;
+  transition:max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer{
+  max-height:300px;
+  padding:15px 20px 20px 20px;
+}
+
+.query-section{
+  margin-top:80px;
+  padding:40px;
+  background:rgba(255,255,255,0.05);
+  border-radius:15px;
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.1);
+  animation:fadeUp 1.3s ease forwards;
+}
+
+.query-section h2{
+  text-align:center;
+  margin-bottom:30px;
+  background:linear-gradient(45deg,#00ffff,#ff00cc);
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.query-section form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.query-section input,
+.query-section textarea{
+  padding:14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+}
+
+.query-section textarea{
+  min-height:120px;
+  resize:none;
+}
+
+.query-section button{
+  padding:14px;
+  border-radius:25px;
+  border:none;
+  cursor:pointer;
+  background:linear-gradient(45deg,#ff00cc,#00ffff);
+  color:#fff;
+  transition:0.3s;
+  box-shadow:0 0 15px rgba(255,0,255,0.5);
+}
+
+.query-section button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px #00ffff;
+}
+
+.query-message{
+  margin-top:10px;
+  text-align:center;
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  .navbar{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:15px 20px;
+  }
+  .nav-links{
+    margin-top:10px;
+  }
+}
+
+footer{
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(10px);
+  text-align:center;
+  padding:20px 10px;
+  font-size:14px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  margin-top:50px;
+
+  background-image:linear-gradient(45deg,#ff00cc,#00ffff,#ffcc00);
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+</style>
+</head>
+
+<body>
+
+<script src="C:\Users\DHRUV\OneDrive\Desktop\bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js">
+</script>
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">
+    <img src="image/logo.png" class="img-logo"> 
+    CampusBuzz
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="results.html">Results</a>
+    <a class="active" href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html" class="login-btn">Login</a>
+    <a href="profile.html" id="profileLink" class="profile-btn" style="display:none;">Profile</a>
+  </div>
+</div>
+
+<!-- FAQ SECTION -->
+<div class="section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">1. What is CampusBuzz?</div>
+    <div class="faq-answer">
+      CampusBuzz is a college event management system that allows students to view events, book tickets, check results, and interact with teachers and administrators online.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">2. How do I register on CampusBuzz?</div>
+    <div class="faq-answer">
+      Go to the Login/Register page, select your role (Student/Teacher), enter your details, and create your account using your college email ID.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">3. I forgot my password. What should I do?</div>
+    <div class="faq-answer">
+      Click on the “Forgot Password” option on the login page. Enter your registered email ID to reset your password.
+    </div>
+  </div>
+
+  <div class="faq-item">
+  <div class="faq-question">4. Who can create or update events?</div> 
+  <div class="faq-answer"> Only teachers and administrators have permission to create, update, or delete events. 
+  </div>
+ </div>
+
+ <div class="faq-item"> 
+ <div class="faq-question">5. How can I check event results?</div> 
+ <div class="faq-answer"> Students can visit the “Results” page to view event results uploaded by teachers. 
+ </div> 
+ </div>
+
+  <!-- Add remaining FAQ same way if needed -->
+
+  <!-- QUERY BOX -->
+  <div class="query-section">
+    <h2>Still Have a Question?</h2>
+    <form id="queryForm">
+      <input type="text" id="userName" placeholder="Your Name *" required>
+      <input type="email" id="userEmail" placeholder="Your Email *" required>
+      <textarea id="userQuery" placeholder="Write Your Question Here..." required></textarea>
+      <button type="submit">Submit Query</button>
+      <div class="query-message" id="queryMessage"></div>
+    </form>
+  </div>
+
+</div>
+
+<script>
+
+/* FAQ TOGGLE */
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("active");
+  });
+});
+
+/* QUERY FORM */
+document.getElementById("queryForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("userName").value.trim();
+  let email = document.getElementById("userEmail").value.trim();
+  let query = document.getElementById("userQuery").value.trim();
+  let message = document.getElementById("queryMessage");
+
+  if(!name || !email || !query){
+    message.style.color = "#ff4d6d";
+    message.innerText = "❌ Please fill all fields";
+    return;
+  }
+
+  const queryData = {
+    name:name,
+    email:email,
+    query:query,
+    date:new Date().toLocaleString()
+  };
+
+  let queries = JSON.parse(localStorage.getItem("userQueries")) || [];
+  queries.push(queryData);
+  localStorage.setItem("userQueries", JSON.stringify(queries));
+
+  message.style.color = "#00ffcc";
+  message.innerText = "✅ Your query has been submitted successfully!";
+
+  document.getElementById("queryForm").reset();
+});
+
+document.addEventListener("DOMContentLoaded", function(){
+  const role = localStorage.getItem("userRole");
+  if(role === "student"){
+    document.getElementById("profileLink").style.display = "inline";
+    document.querySelector(".login-btn").style.display = "none";
+  }
+});
+
+</script>
+
+<footer>© 2026 College Event Website</footer>
+
+</body>
+</html>

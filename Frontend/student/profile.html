@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Profile | CampusBuzz</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="b5" href="C:\Users\DHRUV\OneDrive\Desktop\bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\css\bootstrap.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  margin:0;
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  url("image/event.jpg") no-repeat center center fixed;
+  background-size:cover;
+  color:#fff;
+}
+
+.navbar{
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 60px;
+  box-shadow:0 0 20px rgba(255,0,255,0.4);
+}
+
+.logo{
+  font-weight:600;
+  font-size:30px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:linear-gradient(45deg,#ff00cc,#3333ff,#00ffff);
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.img-logo{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+}
+
+.nav-links a{
+  margin-left:25px;
+  text-decoration:none;
+  color:#ddd;
+  font-size:14px;
+  padding:6px 14px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  background:linear-gradient(45deg,#ff00cc,#3333ff);
+  box-shadow:0 0 15px #ff00cc;
+}
+
+.profile-wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:80px 20px;
+}
+
+.profile-card{
+  width:450px;
+  background:rgba(255,255,255,0.05);
+  border-radius:18px;
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 0 30px rgba(0,255,255,0.3);
+  padding:30px;
+  animation:fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.profile-img-box{
+  text-align:center;
+  margin-bottom:20px;
+  position:relative;
+}
+
+.profile-img-box img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #00ffff;
+  box-shadow:0 0 20px #00ffff;
+}
+
+.upload-btn{
+  position:absolute;
+  bottom:0;
+  right:38%;
+  background:linear-gradient(45deg,#ff00cc,#00ffff);
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+}
+
+.upload-btn i{
+  color:#fff;
+}
+
+#fileInput{
+  display:none;
+}
+
+.profile-card h2{
+  text-align:center;
+  margin-bottom:20px;
+  background:linear-gradient(45deg,#00ffff,#ff00cc);
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.profile-card h3{
+  margin-bottom:10px;
+}
+
+.events-box{
+  background:rgba(0,0,0,0.3);
+  padding:15px;
+  border-radius:12px;
+  max-height:200px;
+  overflow:auto;
+  box-shadow:0 0 15px rgba(255,0,255,0.3);
+}
+
+.event-item{
+  padding:10px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  font-size:14px;
+}
+
+.no-event{
+  text-align:center;
+  opacity:0.7;
+}
+
+.logout-btn{
+  margin-top:20px;
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(45deg,#ff00cc,#3333ff);
+  color:#fff;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 0 15px rgba(255,0,255,0.6);
+}
+
+.logout-btn:hover{
+  transform:scale(1.07);
+  box-shadow:0 0 25px #00ffff;
+}
+
+footer{
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(10px);
+  text-align:center;
+  padding:20px 10px;
+  font-size:14px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  margin-top:50px;
+  background-image:linear-gradient(45deg,#ff00cc,#00ffff,#ffcc00);
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+</style>
+</head>
+
+<body>
+
+<script src="C:\Users\DHRUV\OneDrive\Desktop\bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js"></script>
+
+<div class="navbar">
+    <div class="logo">
+      <img src="image/logo.png" alt="logo" class="img-logo"> 
+      CampusBuzz</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="results.html">Results</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a class="active" href="profile.html" id="profileLink" class="profile-btn" style="display:none;">Profile</a>
+    </div>
+</div>
+
+<div class="profile-wrapper">
+<div class="profile-card">
+
+<div class="profile-img-box">
+  <img src="image/profile.png" id="profileImage">
+  <label for="fileInput" class="upload-btn">
+    <i class="fa-solid fa-camera"></i>
+  </label>
+  <input type="file" id="fileInput" accept="image/*">
+</div>
+
+<h2 id="studentName">Student Name</h2>
+
+<h3>Participated Events</h3>
+<div class="events-box" id="eventList"></div>
+
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+</div>
+</div>
+
+<script>
+if(localStorage.getItem("userRole")!=="student"){
+  window.location.href="login.html";
+}
+
+const user = JSON.parse(localStorage.getItem("registeredUser"));
+const profileImage = document.getElementById("profileImage");
+
+if(user){
+  document.getElementById("studentName").innerText = user.name;
+
+  // Load only this student's photo
+  const savedPhoto = localStorage.getItem("profilePhoto_" + user.name);
+  if(savedPhoto){
+    profileImage.src = savedPhoto;
+  } else {
+    profileImage.src = "image/profile.png"; // default blank photo
+  }
+}
+
+const events = JSON.parse(localStorage.getItem("events")) || [];
+const list = document.getElementById("eventList");
+
+if(events.length===0){
+  list.innerHTML='<p class="no-event">No events registered yet.</p>';
+}else{
+  events.forEach(e=>{
+    list.innerHTML+=`<div class="event-item">${e.eventName}<br><small>Booking ID: ${e.bookingId}</small></div>`;
+  });
+}
+
+const fileInput = document.getElementById("fileInput");
+
+fileInput.addEventListener("change",function(){
+  const file = this.files[0];
+  if(file && user){
+    const reader = new FileReader();
+    reader.onload = function(){
+      profileImage.src = reader.result;
+      // Save photo with unique key per student
+      localStorage.setItem("profilePhoto_" + user.name, reader.result);
+    }
+    reader.readAsDataURL(file);
+  }
+});
+
+function logout(){
+  localStorage.removeItem("userRole");
+  window.location.href="login.html";
+}
+</script>
+
+<footer>© 2026 College Event Website</footer>
+
+</body>
+</html>

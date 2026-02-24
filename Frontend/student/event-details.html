@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event Details | CampusBuzz</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="image/logo.png">
+<link rel="b5" href="C:\Users\DHRUV\OneDrive\Desktop\bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\css\bootstrap.min.css">
+
+<style>
+body{
+  font-family:Poppins,sans-serif;
+  background:linear-gradient(135deg,#0f0c29,#302b63,#1a1a2e);
+  margin:0;
+  color:#fff;
+}
+
+.navbar{
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 60px;
+  box-shadow:0 0 20px rgba(255,0,255,0.4);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-weight:600;
+  font-size:30px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:linear-gradient(45deg,#ff00cc,#3333ff,#00ffff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.img-logo{
+  width:50px;
+  height:50px;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#ddd;
+  font-size:14px;
+  padding:6px 14px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  background:linear-gradient(45deg,#ff00cc,#3333ff);
+  box-shadow:0 0 15px #ff00cc;
+}
+
+.profile-btn{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.page{
+  max-width:1000px;
+  margin:40px auto;
+}
+
+.container{
+  max-width:1200px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:30px;
+}
+
+.main-card,.side-card{
+  background:rgba(255,255,255,0.06);
+  border-radius:16px;
+  padding:25px;
+  border:1px solid rgba(0,255,255,0.2);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  box-shadow:0 0 30px rgba(0,255,255,0.25);
+  margin-bottom:20px;
+  transition:0.4s ease;
+}
+
+.main-card:hover,
+.side-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 0 45px rgba(255,0,255,0.7);
+}
+
+.main-card img{
+  width:50%;
+  border-radius:14px;
+  margin-bottom:15px;
+  box-shadow:0 0 25px rgba(255,0,255,0.4);
+  transition:0.4s ease;
+}
+
+.main-card img:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 40px #00ffff;
+}
+
+.badge{
+  position:absolute;
+  background:linear-gradient(45deg,#ff00cc,#00ffff);
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:13px;
+  margin:15px;
+  color:#fff;
+  box-shadow:0 0 15px #ff00cc;
+  animation:glowPulse 2s infinite alternate;
+}
+
+h1{
+  margin:15px 0 10px;
+  background:linear-gradient(45deg,#ff00cc,#00ffff,#ffcc00);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:fadeSlideUp 0.8s ease forwards;
+}
+
+h3{
+  color:#00ffff;
+  animation:fadeSlideUp 1s ease forwards;
+}
+
+.details p{
+  font-size:14px;
+  color:#ccc;
+  margin:10px 0;
+  line-height:1.6;
+  animation:fadeSlideUp 1.2s ease forwards;
+}
+
+ul li{
+  color:#ddd;
+  margin:8px 0;
+  animation:fadeSlideUp 1.3s ease forwards;
+}
+
+.register{
+  width:100%;
+  padding:14px;
+  margin-top:20px;
+  background:linear-gradient(45deg,#ff00cc,#3333ff);
+  border:none;
+  color:#fff;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(255,0,255,0.6);
+  transition:0.4s ease;
+  animation:fadeSlideUp 1.4s ease forwards;
+}
+
+.register:hover{
+  transform:translateY(-6px) scale(1.05);
+  box-shadow:0 0 50px #00ffff;
+}
+
+.back{
+  text-decoration:none;
+  color:#fff;
+  transition:0.3s;
+}
+
+.back:hover{
+  color:#00ffff;
+  text-shadow:0 0 15px #00ffff;
+}
+
+@keyframes fadeSlideUp {
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes glowPulse{
+  from{
+    box-shadow:0 0 10px #ff00cc;
+  }
+  to{
+    box-shadow:0 0 30px #00ffff;
+  }
+}
+
+@media(max-width:900px){
+  .container{
+    grid-template-columns:1fr;
+  }
+}
+
+footer{
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(10px);
+  text-align:center;
+  padding:20px 10px;
+  font-size:14px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  margin-top:50px;
+
+  background-image:linear-gradient(45deg,#ff00cc,#00ffff,#ffcc00);
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+</style>
+</head>
+
+<body>
+
+<script src="C:\Users\DHRUV\OneDrive\Desktop\bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js"></script>
+
+<div class="navbar">
+  <div class="logo">
+    <img src="image/logo.png" alt="logo" class="img-logo">
+    CampusBuzz
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="results.html">Results</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html" class="login-btn">Login</a>
+    <a href="profile.html" id="profileLink" class="profile-btn" style="display:none;">Profile</a>
+  </div>
+</div>
+
+    <div class="page">
+    <a class="back" href="index.html">← Back to Home </a>
+
+<div class="container">
+
+  <div class="main-card">
+    <span class="badge" id="category"></span>
+    <img id="eventImg" alt="Event Image">
+    <h1 id="title"></h1>
+    <p id="desc"></p>
+
+    <h3>Event Rules & Guidelines</h3>
+    <ul>
+      <li>Valid student ID required</li>
+      <li>Arrive 30 minutes early</li>
+      <li>Certificates will be provided</li>
+    </ul>
+  </div>
+
+  <div>
+
+    <div class="side-card details">
+      <h3>Event Details</h3>
+      <p>📅 <span id="date"></span></p>
+      <p>⏰ <span id="time"></span></p>
+      <p>📍 <span id="venue"></span></p>
+      <p>👥 <span id="participants"></span></p>
+    </div>
+
+    <div class="side-card details">
+      <h3>Contact Information</h3>
+      <p>
+        👤 <strong id="contactName"></strong><br>
+        <span id="contactRole"></span>
+      </p>
+      <p>✉️ <span id="contactEmail"></span></p>
+      <p>📞 <span id="contactPhone"></span></p>
+    </div>
+    <a id="registerLink">
+  <button class="register">Register Now</button>
+</a>
+
+
+  </div>
+</div>
+</div>
+
+<script>
+const events = {
+  1:{
+    title:"Annual Tech Symposium 2026",
+    category:"Technical",
+    img:"image/event1.jpg",
+    desc:"Technology talks & innovation.",
+    date:"March 25, 2026",
+    time:"9:00 AM - 5:00 PM",
+    venue:"Main Auditorium, Block A",
+    participants:"145 / 200 registered",
+    contactName:"Dr. Sarah Patel",
+    contactRole:"Event Coordinator",
+    contactEmail:"sarah.petel@college.edu",
+    contactPhone:"7861881784"
+  },
+  2:{
+    title:"Spring Cultural Fest",
+    category:"Cultural",
+    img:"image/event2.jpg",
+    desc:"Music, dance & celebration.",
+    date:"April 10, 2026",
+    time:"6:00 PM - 10:00 PM",
+    venue:"Central Courtyard",
+    participants:"320 / 500 registered",
+    contactName:"Mr. Rahul Mehta",
+    contactRole:"Cultural Head",
+    contactEmail:"rahul.mehta@college.edu",
+    contactPhone:"+91 98765 43210"
+  },
+  3:{
+    title:"Entrepreneurship Workshop",
+    category:"Workshop",
+    img:"image/event3.jpg",
+    desc:"Build startup ideas.",
+    date:"April 20, 2026",
+    time:"2:00 PM - 6:00 PM",
+    venue:"Business School, Room 301",
+    participants:"35 / 50 registered",
+    contactName:"Ms. Anjali Verma",
+    contactRole:"Startup Mentor",
+    contactEmail:"anjali.verma@college.edu",
+    contactPhone:"+91 91234 56789"
+  },
+  4:{
+    title:"Inter-College Sports Meet",
+    category:"Sports",
+    img:"image/event4.jpg",
+    desc:"Athletic competitions.",
+    date:"May 2, 2026",
+    time:"8:00 AM - 6:00 PM",
+    venue:"Sports Complex",
+    participants:"210 / 300 registered",
+    contactName:"Coach Amit Singh",
+    contactRole:"Sports Coordinator",
+    contactEmail:"amit.singh@college.edu",
+    contactPhone:"+91 99887 66554"
+  },
+  5:{
+    title:"Coding Bootcamp",
+    category:"Technical",
+    img:"image/event5.jpg",
+    desc:"Hands-on coding.",
+    date:"May 15, 2026",
+    time:"10:00 AM - 4:00 PM",
+    venue:"Lab 3",
+    participants:"60 / 80 registered",
+    contactName:"Mr. Neeraj Kumar",
+    contactRole:"Lead Instructor",
+    contactEmail:"neeraj.kumar@college.edu",
+    contactPhone:"+91 90909 80808"
+  },
+  6:{
+    title:"Art Exhibition",
+    category:"Cultural",
+    img:"image/event6.jpg",
+    desc:"Creativity showcase.",
+    date:"June 1, 2026",
+    time:"11:00 AM - 7:00 PM",
+    venue:"Art Gallery",
+    participants:"90 / 150 registered",
+    contactName:"Ms. Pooja Sharma",
+    contactRole:"Art Faculty",
+    contactEmail:"pooja.sharma@college.edu",
+    contactPhone:"+91 93456 78901"
+  }
+};
+
+const id = new URLSearchParams(window.location.search).get("id") || 1;
+const e = events[id];
+
+document.getElementById("title").innerText = e.title;
+document.getElementById("category").innerText = e.category;
+document.getElementById("eventImg").src = e.img;
+document.getElementById("desc").innerText = e.desc;
+document.getElementById("date").innerText = e.date;
+document.getElementById("time").innerText = e.time;
+document.getElementById("venue").innerText = e.venue;
+document.getElementById("participants").innerText = e.participants;
+document.getElementById("contactName").innerText = e.contactName;
+document.getElementById("contactRole").innerText = e.contactRole;
+document.getElementById("contactEmail").innerText = e.contactEmail;
+document.getElementById("contactPhone").innerText = e.contactPhone;
+document.getElementById("registerLink").href =
+  "event-register.html?id=" + id;
+
+document.addEventListener("DOMContentLoaded", function(){
+  const role = localStorage.getItem("userRole");
+  if(role === "student"){
+    document.getElementById("profileLink").style.display = "flex";
+    document.querySelector(".login-btn").style.display = "none";
+  }
+});
+</script>
+
+<footer>© 2026 College Event Website</footer>
+
+</body>
+</html>
